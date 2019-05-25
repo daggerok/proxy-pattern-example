@@ -1,4 +1,4 @@
-# Proxy [![Build Status](https://travis-ci.org/daggerok/annotate-me.svg?branch=master)](https://travis-ci.org/daggerok/annotate-me)
+# Proxy [![Build Status](https://travis-ci.org/daggerok/proxy-pattern-example.svg?branch=master)](https://travis-ci.org/daggerok/proxy-pattern-example)
 Proxy Design Pattern java implementation
 
 ```bash
@@ -11,15 +11,17 @@ Proxy Design Pattern java implementation
 ```
 -->
 
+One of proxy pattern usage can be for example cached implementation:
+
 ```
-                 +----------------------+     +--------+
-                 | Gateway (shared API) |<----| Client |
-                 +----------------------+     +--------+
-                            ^
-                            |
-            +---------------+---------------+
-            |                               |
-+-------------------------+   +----------------------------+
-| GatewayImpl (immutable) |   | GatewayCachedProxy (proxy) |
-+-------------------------+   +----------------------------+
+                   +----------------------+     +--------+
+                   | Gateway (shared API) |<----| Client |
+                   +----------------------+     +--------+
+                              ^
+                              |
+             +----------------+---------------+
+             |                                |
++-------------------------+      +----------------------------+
+| GatewayImpl (immutable) |      | GatewayCachedProxy (proxy) |
++-------------------------+      +----------------------------+
 ```
